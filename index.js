@@ -4,6 +4,8 @@ const cors = require("cors");
 const connectToDB = require("./config/databaseConfig");
 const userRoutes = require("./routes/users")
 const assignmentRoutes = require("./routes/assignment");
+const uploadedAssignmentRoutes = require("./routes/uploadedAssignmentRoutes");
+const videoLectureRoutes = require("./routes/videoLectureRoutes");
 
 const dotenv = require("dotenv");
 
@@ -27,6 +29,8 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoutes);
 app.use("/api/assignment", assignmentRoutes);
+app.use("/api/uploaded-assignment", uploadedAssignmentRoutes);
+app.use("/api/video-lecture", videoLectureRoutes);
 
 
 app.use("/uploads", express.static("uploads"));
