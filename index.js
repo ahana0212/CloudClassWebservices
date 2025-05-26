@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use("/api/users", userRoutes);
 app.use("/api/assignment", assignmentRoutes);
 app.use("/api/uploaded-assignment", uploadedAssignmentRoutes);
-app.use("/api/video-lecture", videoLectureRoutes);
+app.use("/api/videos-lecture", videoLectureRoutes);
 
 
 app.use("/uploads", express.static("uploads"));

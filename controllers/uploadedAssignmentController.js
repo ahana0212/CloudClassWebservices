@@ -2,7 +2,7 @@ const UploadedAssignment = require("../models/uploadedAssignment");
 
 const uploadAssignment = async (req, res) => {
   try {
-    const { studentId, assignmentTitle } = req.body;
+    const { studentId, title: assignmentTitle } = req.body;
     const file = req.file?.filename;
 
     if (!file) {
