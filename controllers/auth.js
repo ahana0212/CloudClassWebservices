@@ -45,7 +45,7 @@ exports.validate_otp = async (req, res) => {
     user.otpExpires = undefined;
     await user.save();
 
-    res.status(200).json({ message: "OTP validated successfully", success: true, authToken: "dksvnjdvbjkdfvjndjkfvbjdfnvjdbnv" });
+    res.status(200).json({ message: "OTP validated successfully", success: true, authToken: "dksvnjdvbjkdfvjndjkfvbjdfnvjdbnv" , user: userName });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

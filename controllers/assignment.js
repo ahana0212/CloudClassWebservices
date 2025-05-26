@@ -3,8 +3,8 @@ const Assignment = require("../models/assignments");
 // Create a new assignment
 const createAssignment = async (req, res) => {
   try {
-    const { title, description, dueDate, attachmentUrl } = req.body;
-    const createdBy = req.user._id; // from middleware if using auth
+    const { title, description, dueDate, attachmentUrl, _id } = req.body;
+    const createdBy = _id; // from middleware if using auth
 
     if (!title || !dueDate) {
       return res.status(400).json({ success: false, message: "Title and due date are required" });
