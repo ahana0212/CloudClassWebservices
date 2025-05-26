@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectToDB = require("./config/databaseConfig");
 const userRoutes = require("./routes/users")
+const assignmentRoutes = require("./routes/assignment");
 
 const dotenv = require("dotenv");
 
@@ -25,7 +26,7 @@ app.use(bodyParser.json());
 // api connectors
 
 app.use("/api/users", userRoutes);
-
+app.use("/api/assignment", assignmentRoutes);
 
 
 app.use("/uploads", express.static("uploads"));

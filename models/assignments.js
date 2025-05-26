@@ -1,15 +1,25 @@
 const mongoose = require("mongoose");
 
-const AssignmentSchema = new mongoose.Schema({
-  uploadUrl: {
+const assignmentSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true,
   },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // This references the User model
+  description: String,
+  dueDate: {
+    type: Date,
     required: true,
   },
-}, { timestamps: true });
+  attachmentUrl: String,
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User", // assuming you have a User model
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-module.exports = mongoose.model("Assignment", AssignmentSchema);
+module.exports = mongoose.model("Assignment", assignmentSchema);
