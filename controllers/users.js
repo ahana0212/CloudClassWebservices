@@ -4,8 +4,8 @@ const User = require("../models/users");
 // Create user (signup)
 exports.createUser = async (req, res) => {
   try {
-    const { name, email, isTeacher } = req.body;
-    const user = new User({ name, email, isTeacher });
+    const { name, email, isTeacher, PhoneNumber } = req.body;
+    const user = new User({ name, email, isTeacher, PhoneNumber });
     await user.save();
     res.status(201).json(user);
   } catch (err) {
