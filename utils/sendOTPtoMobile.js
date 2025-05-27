@@ -10,6 +10,10 @@ const client = require('twilio')(accountSid, authToken);
 
 const sendMsgToPhone = async (to, msg) => {
     try {
+        console.log({
+            accountSid,
+            authToken
+        })
         const verification = await client.messages.create({
             body: `Your Varification OTP : ${msg}`,
             from: "+16267885323",
