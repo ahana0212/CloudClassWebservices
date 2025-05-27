@@ -19,9 +19,7 @@ const PORT = 8000;
 const app = express();
 
 
-app.use(cors({
-    origin: ["http://localhost:5173", "http://159.65.153.139"],
-  }));
+app.use(cors());
 app.use(bodyParser.json());
 
 
